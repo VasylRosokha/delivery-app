@@ -1,0 +1,23 @@
+services:
+  mongodb:
+    image: mongo:7
+    container_name: delivery-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  app:
+    build: .
+    container_name: delivery-app
+    ports:
+      - "5050:5000"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/delivery-app
+      - PORT=5000
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:
