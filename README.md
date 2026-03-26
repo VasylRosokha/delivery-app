@@ -2,6 +2,8 @@
 
 A full-stack food delivery web application built with React, Express, and MongoDB.
 
+**Live Demo:** https://delivery-app-0ho6.onrender.com
+
 ## Accomplished Task Levels
 
 - **Base Level** - Shops page, Shopping Cart page, form validation, orders saved to database
